@@ -1,0 +1,144 @@
+@CHARSET "UTF-8";
+body{
+	background: #fff;
+}
+#top-header{
+	width: 100%;
+	background-color: black;
+}
+
+#header-bot{
+	border-top: 1px solid black;
+	margin-bottom: 30px;
+	background-color: lightgray;
+}
+
+#user{
+	width: 15%;
+	height: 40px;
+	margin-left: 10%;
+	margin-top: 25px;
+	font-size: 25px;
+	border-bottom:1px solid black;
+}
+#user a{
+	float:right;
+	margin-right:20px;
+	text-decoration:none;
+	color:#000;
+	transition:ease 0.4s;
+}
+#user a:hover{
+	color:#fff;
+}
+
+#cart{
+	margin-left: 10%;
+	width: 15%;
+	height: 30px;
+	font-size: 25px;
+	padding-bottom:10px;
+}
+#cart a{
+	text-decoration:none;
+	color:#000;
+	transition:ease 0.4s;
+}
+#cart a:hover{
+	color:#fff;
+}
+
+#shoes{
+	font-size: 30px;
+	width:100%;
+	height:410px;
+}
+#shoes a{
+	text-decoration:none;
+}
+.ab{
+	width:150px;
+	height:40px;
+	font-size:23px;
+	font-family:Arial;
+	background-color:#fff;
+	border-radius:5px;
+	transition:ease 0.4s;
+}
+.ab:hover{
+	background-color:#C6E2FF;
+}
+
+.db{
+	width:180px;
+	height:40px;
+	font-size:23px;
+	font-family:Arial;
+	background-color:#fff;
+	border-radius:5px;
+	transition:ease 0.4s;
+}
+.db:hover{
+	background-color:#C6E2FF;
+}
+
+.s1{
+	color:#000;
+	transition:ease 0.4s;
+}
+.s1:hover{
+	color:#fff;
+}
+
+#shoe1{
+	background-color: lightgray;
+	position: absolute;
+	left: 13%;
+	text-align: center;
+	border-radius:5px;
+}
+#shoe2{
+	background-color: lightgray;
+	position: absolute;
+	left: 33%;
+	text-align: center;
+	border-radius:5px;
+}
+#shoe3{
+	background-color: lightgray;
+	position: absolute;
+	left: 53%;
+	text-align: center;
+	border-radius:5px;
+}
+#shoe4{
+	background-color: lightgray;
+	position: absolute;
+	left: 73%;
+	text-align: center;
+	border-radius:5px;
+}
+
+#details{
+	border:2px solid black;
+	border-radius:5px;
+	width:30%;
+	height:150px;
+	font-size:20px;
+	margin-left:34%;
+	margin-bottom:20px;
+	position:absolute;
+	top:770px;
+}
+
+#sc{
+	border:2px solid black;
+	border-radius:5px;
+	width:25%;
+	height:230px;
+	font-size:25px;
+	padding-top:15px;
+	padding-left:15px;
+	position:absolute;
+	top:770px;
+}
