@@ -9,7 +9,6 @@ window.onload = function () {
     var boxs = list.children;
     var timer;
 
-    //格式化日期
     function formateDate(date) {
         var y = date.getFullYear();
         var m = date.getMonth() + 1;
@@ -20,16 +19,10 @@ window.onload = function () {
         return y + '-' + m + '-' + d + ' ' + h + ':' + mi;
     }
 
-    //删除节点
     function removeNode(node) {
         node.parentNode.removeChild(node);
     }
 
-    /**
-     * 赞分享
-     * @param box 每个分享的div容器
-     * @param el 点击的元素
-     */
     function praiseBox(box, el) {
         var txt = el.innerHTML;
         var praisesTotal = box.getElementsByClassName('praises-total')[0];
@@ -50,11 +43,6 @@ window.onload = function () {
         praisesTotal.style.display = (newTotal == 0) ? 'none' : 'block';
     }
 
-    /**
-     * 发评论
-     * @param box 每个分享的div容器
-     * @param el 点击的元素
-     */
     function reply(box, el) {
         var commentList = box.getElementsByClassName('comment-list')[0];
         var textarea = box.getElementsByClassName('comment')[0];
@@ -62,9 +50,9 @@ window.onload = function () {
         commentBox.className = 'comment-box clearfix';
         commentBox.setAttribute('user', 'self');
         commentBox.innerHTML =
-            '<img class="myhead" src="ko.jpg" alt=""/>' +
+            '<img class="myhead" src="images/ko.jpg" alt=""/>' +
                 '<div class="comment-content">' +
-                '<p class="comment-text"><span class="user">Me：</span>' + textarea.value + '</p>' +
+                '<p class="comment-text"><span class="user">Me: </span>' + textarea.value + '</p>' +
                 '<p class="comment-time">' +
                 formateDate(new Date()) +
                 '<a href="javascript:;" class="comment-praise" total="0" my="0" style="">Like</a>' +
@@ -76,10 +64,6 @@ window.onload = function () {
         textarea.onblur();
     }
 
-    /**
-     * 赞回复
-     * @param el 点击的元素
-     */
     function praiseReply(el) {
         var myPraise = parseInt(el.getAttribute('my'));
         var oldTotal = parseInt(el.getAttribute('total'));
@@ -99,10 +83,7 @@ window.onload = function () {
         el.style.display = (newTotal == 0) ? '' : 'inline-block'
     }
 
-    /**
-     * 操作留言
-     * @param el 点击的元素
-     */
+
     function operate(el) {
         var commentBox = el.parentNode.parentNode.parentNode;
         var box = commentBox.parentNode.parentNode.parentNode;
@@ -119,58 +100,53 @@ window.onload = function () {
         }
     }
 
-    //把事件代理到每条分享div容器
     for (var i = 0; i < boxs.length; i++) {
 
-        //点击
         boxs[i].onclick = function (e) {
             e = e || window.event;
             var el = e.srcElement;
             switch (el.className) {
 
-                //关闭分享
                 case 'close':
                     removeNode(el.parentNode);
                     break;
 
-                //赞分享
                 case 'praise':
                     praiseBox(el.parentNode.parentNode.parentNode, el);
                     break;
 
-                //回复按钮蓝
+             
                 case 'btn':
                     reply(el.parentNode.parentNode.parentNode, el);
                     break
 
-                //回复按钮灰
+             
                 case 'btn btn-off':
                     clearTimeout(timer);
                     break;
-
-                //赞留言
+       
                 case 'comment-praise':
                     praiseReply(el);
                     break;
 
-                //操作留言
+          
                 case 'comment-operate':
                     operate(el);
                     break;
             }
         }
 
-        //评论
+ 
         var textArea = boxs[i].getElementsByClassName('comment')[0];
 
-        //评论获取焦点
+    
         textArea.onfocus = function () {
             this.parentNode.className = 'text-box text-box-on';
             this.value = this.value == 'Comment...' ? '' : this.value;
             this.onkeyup();
         }
 
-        //评论失去焦点
+
         textArea.onblur = function () {
             var me = this;
             var val = me.value;
@@ -182,7 +158,7 @@ window.onload = function () {
             }
         }
 
-        //评论按键事件
+
         textArea.onkeyup = function () {
             var val = this.value;
             var len = val.length;
