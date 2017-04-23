@@ -8,7 +8,7 @@
 	border-radius:8px;
 	float: right;
 	position: absolute;
-	top: 1330px;
+	top: 1500px;
 	left: 36%;
 }
 
@@ -39,8 +39,7 @@ a:hover{
 	width: 540px;
 }
 .box{
-	border-top: 1px;
-	solid #eee;
+	border-top: 1px solid #eee;
 	position: relative;
 	width: 540px;
 	padding: 20px 0;
