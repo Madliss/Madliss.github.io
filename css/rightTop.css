@@ -3,15 +3,6 @@
 	background-color: #000;
 }
 
-#vid{
-	border: 3px solid black;
-	border-radius:8px;
-	float: right;
-	position: absolute;
-	top: 1500px;
-	left: 36%;
-}
-
 #comment{
 	width: 100%;
 }
